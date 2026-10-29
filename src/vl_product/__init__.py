@@ -1,0 +1,1 @@
+"""Vehicle-location research catalog."""

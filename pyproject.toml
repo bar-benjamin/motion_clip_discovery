@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vl-product"
+version = "0.1.0"
+description = "Dense vehicle-location signals to a queryable motion clip catalog"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "numpy>=2.2,<3",
+    "duckdb>=1.4,<2",
+    "streamlit>=1.50,<2",
+    "plotly>=6,<7",
+    "pandas>=2.2,<4",
+]
+
+[project.scripts]
+vl-demo = "vl_product.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<10",
+    "pytest-cov>=6,<8",
+    "ruff>=0.11,<1",
+    "pip-audit>=2.9,<3",
+    "mypy>=1.15,<2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src"]
+
+# Runtime DataFrames come from DuckDB; pandas-stubs is not a runtime dependency.
+[[tool.mypy.overrides]]
+module = ["pandas"]
+ignore_missing_imports = true

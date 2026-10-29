@@ -1,0 +1,30 @@
+[server]
+address = "127.0.0.1"
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "dark"
+font = "sans serif"
+
+[theme.dark]
+primaryColor = "#B4F24E"
+backgroundColor = "#09090B"
+secondaryBackgroundColor = "#111113"
+textColor = "#FAFAFA"
+
+[theme.dark.sidebar]
+backgroundColor = "#09090B"
+secondaryBackgroundColor = "#111113"
+
+[theme.light]
+primaryColor = "#4D7000"
+backgroundColor = "#F4F4F5"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#18181B"
+
+[theme.light.sidebar]
+backgroundColor = "#F4F4F5"
+secondaryBackgroundColor = "#FFFFFF"
