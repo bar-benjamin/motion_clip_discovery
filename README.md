@@ -2,6 +2,10 @@
 
 Find recorded-drive clips by ego motion(EM), inspect their trajectories, and trace every result back to its source frame. This motion-based clip discovery turns dense vehicle-location(VL) point clouds into a reusable SQL catalog and an interactive dashboard UI.
 
+## Live Preview
+
+[Open the Streamlit dashboard](https://motion-clip-discovery.streamlit.app/)
+
 ## What comes out of the pipeline
 
 The default run creates `data/catalog.duckdb` with **1,000 accepted frame records and four clip summaries**, one for each synthetic drive: steady, turn, stop/start and stationary. The command prints an ingestion report; the dashboard reads the database and lets you find and inspect those clips. You can download result tables as CSV or export reduced frame facts as Parquet.
